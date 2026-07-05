@@ -103,13 +103,13 @@ object LazIdeTabListForm: TLazIdeTabListForm
   end
   object pnlHeader: TPanel
     Left = 0
-    Height = 29
+    Height = 33
     Top = 26
     Width = 952
     Align = alTop
     AutoSize = True
     BevelOuter = bvNone
-    ClientHeight = 29
+    ClientHeight = 33
     ClientWidth = 952
     ParentColor = False
     TabOrder = 1
@@ -118,7 +118,7 @@ object LazIdeTabListForm: TLazIdeTabListForm
       AnchorSideTop.Side = asrCenter
       Left = 6
       Height = 15
-      Top = 7
+      Top = 9
       Width = 35
       BorderSpacing.Around = 6
       Caption = '&Search'
@@ -131,7 +131,7 @@ object LazIdeTabListForm: TLazIdeTabListForm
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Side = asrBottom
       Left = 47
-      Height = 17
+      Height = 21
       Top = 6
       Width = 545
       Anchors = [akTop, akLeft, akRight, akBottom]
@@ -142,11 +142,23 @@ object LazIdeTabListForm: TLazIdeTabListForm
       OnChange = SomethingChange
       OnKeyDown = edMethodsKeyDown
     end
+    object sbFilterCancel: TSpeedButton
+      AnchorSideLeft.Control = edMethods
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = edMethods
+      AnchorSideTop.Side = asrCenter
+      Left = 598
+      Height = 22
+      Top = 5
+      Width = 23
+      BorderSpacing.Around = 6
+      OnClick = sbFilterCancelClick
+    end
   end
   object SG: TStringGrid
     Left = 0
-    Height = 610
-    Top = 55
+    Height = 606
+    Top = 59
     Width = 952
     Align = alClient
     AutoFillColumns = True
@@ -159,7 +171,6 @@ object LazIdeTabListForm: TLazIdeTabListForm
         Width = 352
       end    
       item
-        SizePriority = 1
         Title.Caption = 'Type'
         Width = 600
       end>

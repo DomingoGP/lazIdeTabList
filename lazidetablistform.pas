@@ -40,7 +40,7 @@ uses
   Classes, SysUtils, Math, contnrs,
   // LCL
   LCLType, Forms, Controls, Dialogs, ComCtrls, ExtCtrls, StdCtrls, Clipbrd,
-  Graphics, Grids, TextTools,
+  Graphics, Grids, TextTools, Buttons,
   // LazUtils
   LazStringUtils,
   // Codetools
@@ -60,6 +60,7 @@ type
     edMethods: TEdit;
     lblSearch: TLabel;
     pnlHeader: TPanel;
+    sbFilterCancel: TSpeedButton;
     StatusBar: TStatusBar;
     SG: TStringGrid;
     TB: TToolBar;
@@ -76,6 +77,7 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormResize(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure sbFilterCancelClick(Sender: TObject);
     procedure SGDblClick(Sender: TObject);
     procedure SomethingChange(Sender: TObject);
   private
@@ -179,6 +181,9 @@ begin
   tbJumpTo.ImageIndex      := IDEImages.LoadImage('menu_goto_line');
   tbFilterAny.ImageIndex   := IDEImages.LoadImage('filter_any_place');
   tbFilterStart.ImageIndex := IDEImages.LoadImage('filter_from_begin');
+
+  sbFilterCancel.Images := IDEImages.Images_16;
+  sbFilterCancel.ImageIndex := IDEImages.LoadImage('btnfiltercancel');
 
   SG.FocusRectVisible := false;
 
@@ -328,6 +333,11 @@ end;
 procedure TLazIdeTabListForm.FormShow(Sender: TObject);
 begin
   edMethods.SetFocus;
+end;
+
+procedure TLazIdeTabListForm.sbFilterCancelClick(Sender: TObject);
+begin
+  edMethods.Text := '';
 end;
 
 procedure TLazIdeTabListForm.SGDblClick(Sender: TObject);

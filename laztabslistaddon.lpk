@@ -28,7 +28,7 @@ WITHOUT ANY WARRANTY; without even the implied warranty of
   obtain it by writing to the Free Software Foundation, 
    Inc., 51 Franklin Street - Fifth Floor, Boston, MA 02110-1335, USA. 
 "/>
-    <Version Major="1"/>
+    <Version Major="1" Minor="1"/>
     <Files Count="2">
       <Item1>
         <Filename Value="lazidetablistform.lfm"/>
