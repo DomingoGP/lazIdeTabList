@@ -1,0 +1,177 @@
+object LazIdeTabListForm: TLazIdeTabListForm
+  Left = 289
+  Height = 688
+  Top = 140
+  Width = 952
+  Caption = 'Procedure List - '
+  ClientHeight = 688
+  ClientWidth = 952
+  KeyPreview = True
+  Position = poMainFormCenter
+  LCLVersion = '4.99.0.0'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnResize = FormResize
+  OnShow = FormShow
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 665
+    Width = 952
+    Panels = <    
+      item
+        Width = 400
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object TB: TToolBar
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 952
+    Caption = 'TB'
+    EdgeBorders = []
+    TabOrder = 0
+    object ToolButton2: TToolButton
+      Left = 85
+      Height = 22
+      Top = 0
+      Caption = 'ToolButton2'
+      Style = tbsDivider
+    end
+    object tbJumpTo: TToolButton
+      Left = 62
+      Hint = 'Jump To Selection'
+      Top = 0
+      Caption = 'Goto'
+      ImageIndex = 5
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = SGDblClick
+    end
+    object ToolButton4: TToolButton
+      Left = 57
+      Height = 22
+      Top = 0
+      Caption = 'ToolButton4'
+      Style = tbsDivider
+    end
+    object tbFilterAny: TToolButton
+      Left = 34
+      Hint = 'Filter by matching any part of method'
+      Top = 0
+      Caption = 'tbFilterAny'
+      Down = True
+      Grouped = True
+      ImageIndex = 8
+      ParentShowHint = False
+      ShowHint = True
+      Style = tbsCheck
+      OnClick = SomethingChange
+    end
+    object tbFilterStart: TToolButton
+      Left = 11
+      Hint = 'Filter by matching with start of method'
+      Top = 0
+      Caption = 'tbFilterStart'
+      Grouped = True
+      ImageIndex = 7
+      ParentShowHint = False
+      ShowHint = True
+      Style = tbsCheck
+      OnClick = SomethingChange
+    end
+    object ToolButton7: TToolButton
+      Left = 6
+      Height = 22
+      Top = 0
+      Caption = 'ToolButton7'
+      Style = tbsDivider
+      Visible = False
+    end
+    object ToolButton9: TToolButton
+      Left = 1
+      Height = 22
+      Top = 0
+      Caption = 'ToolButton9'
+      Style = tbsDivider
+    end
+  end
+  object pnlHeader: TPanel
+    Left = 0
+    Height = 29
+    Top = 26
+    Width = 952
+    Align = alTop
+    AutoSize = True
+    BevelOuter = bvNone
+    ClientHeight = 29
+    ClientWidth = 952
+    ParentColor = False
+    TabOrder = 1
+    object lblSearch: TLabel
+      AnchorSideTop.Control = pnlHeader
+      AnchorSideTop.Side = asrCenter
+      Left = 6
+      Height = 15
+      Top = 7
+      Width = 35
+      BorderSpacing.Around = 6
+      Caption = '&Search'
+      ParentColor = False
+    end
+    object edMethods: TEdit
+      AnchorSideLeft.Control = lblSearch
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = pnlHeader
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Side = asrBottom
+      Left = 47
+      Height = 17
+      Top = 6
+      Width = 545
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 6
+      TabOrder = 0
+      OnChange = SomethingChange
+      OnKeyDown = edMethodsKeyDown
+    end
+  end
+  object SG: TStringGrid
+    Left = 0
+    Height = 610
+    Top = 55
+    Width = 952
+    Align = alClient
+    AutoFillColumns = True
+    BorderStyle = bsNone
+    ColCount = 2
+    Columns = <    
+      item
+        SizePriority = 0
+        Title.Caption = 'Procedure'
+        Width = 352
+      end    
+      item
+        SizePriority = 1
+        Title.Caption = 'Type'
+        Width = 600
+      end>
+    FixedCols = 0
+    MouseWheelOption = mwGrid
+    Options = [goFixedHorzLine, goHorzLine, goColSizing, goRowSelect, goThumbTracking, goSmoothScroll, goCellEllipsis]
+    TabOrder = 3
+    TabStop = False
+    OnDblClick = SGDblClick
+    ColWidths = (
+      352
+      600
+    )
+  end
+end

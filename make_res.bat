@@ -1,0 +1,1 @@
+c:\lazarusTrunk\tools\lazres lazmaplistaddon.res lazmaplist.png lazmaplist_150.png lazmaplist_200.png
